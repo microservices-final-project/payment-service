@@ -1,4 +1,4 @@
-package com.selimhorri.app.service.impl;
+package com.selimhorri.app.unit.service.impl;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.*;
@@ -27,6 +27,7 @@ import com.selimhorri.app.dto.PaymentDto;
 import com.selimhorri.app.exception.wrapper.PaymentNotFoundException;
 import com.selimhorri.app.exception.wrapper.PaymentServiceException;
 import com.selimhorri.app.repository.PaymentRepository;
+import com.selimhorri.app.service.impl.PaymentServiceImpl;
 
 @ExtendWith(MockitoExtension.class)
 class PaymentServiceImplTest {

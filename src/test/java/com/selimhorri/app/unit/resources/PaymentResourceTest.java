@@ -1,4 +1,4 @@
-package com.selimhorri.app.resources;
+package com.selimhorri.app.unit.resources;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.*;
@@ -130,7 +130,7 @@ class PaymentResourceTest {
         String invalidPaymentId = "invalid";
 
         // When & Then
-        NumberFormatException exception = assertThrows(
+        assertThrows(
                 NumberFormatException.class,
                 () -> paymentResource.findById(invalidPaymentId)
         );
@@ -224,7 +224,7 @@ class PaymentResourceTest {
         String invalidPaymentId = "invalid";
 
         // When & Then
-        NumberFormatException exception = assertThrows(
+        assertThrows(
                 NumberFormatException.class,
                 () -> paymentResource.updateStatus(invalidPaymentId)
         );
@@ -287,8 +287,7 @@ class PaymentResourceTest {
         // Given
         String invalidPaymentId = "invalid";
 
-        // When & Then
-        NumberFormatException exception = assertThrows(
+        assertThrows(
                 NumberFormatException.class,
                 () -> paymentResource.deleteById(invalidPaymentId)
         );
@@ -318,8 +317,7 @@ class PaymentResourceTest {
         // Given
         String nullPaymentId = null;
 
-        // When & Then
-        NumberFormatException exception = assertThrows(
+        assertThrows(
                 NumberFormatException.class,
                 () -> paymentResource.deleteById(nullPaymentId)
         );
@@ -332,8 +330,7 @@ class PaymentResourceTest {
         // Given
         String emptyPaymentId = "";
 
-        // When & Then
-        NumberFormatException exception = assertThrows(
+        assertThrows(
                 NumberFormatException.class,
                 () -> paymentResource.deleteById(emptyPaymentId)
         );
