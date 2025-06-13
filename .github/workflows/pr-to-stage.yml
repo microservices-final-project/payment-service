@@ -6,6 +6,6 @@ on:
 
 jobs:
   call-e2e:
-    uses: microservices-final-project/ci-templates/.github/workflows/call-remote-e2e-test.yml@main
+    uses: microservices-final-project/ci-templates/.github/workflows/call-remote-e2e.yml@main
     secrets:
       GH_PAT: ${{ secrets.GH_PAT }}
