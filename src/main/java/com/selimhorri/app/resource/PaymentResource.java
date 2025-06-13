@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -51,6 +52,13 @@ public class PaymentResource {
 
 	@PatchMapping("/{paymentId}")
 	public ResponseEntity<PaymentDto> updateStatus(
+			@PathVariable("paymentId") @NotBlank(message = "Input must not be blank") @Valid final String paymentId) {
+		log.info("*** PaymentDto, resource; save payment *");
+		return ResponseEntity.ok(this.paymentService.updateStatus(Integer.parseInt(paymentId)));
+	}
+
+	@PutMapping("/{paymentId}")
+	public ResponseEntity<PaymentDto> updateStatusPut(
 			@PathVariable("paymentId") @NotBlank(message = "Input must not be blank") @Valid final String paymentId) {
 		log.info("*** PaymentDto, resource; save payment *");
 		return ResponseEntity.ok(this.paymentService.updateStatus(Integer.parseInt(paymentId)));
