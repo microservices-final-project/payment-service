@@ -57,6 +57,13 @@ public class PaymentResource {
 		return ResponseEntity.ok(this.paymentService.updateStatus(Integer.parseInt(paymentId)));
 	}
 
+	@PutMapping("/{paymentId}")
+	public ResponseEntity<PaymentDto> updateStatusPut(
+			@PathVariable("paymentId") @NotBlank(message = "Input must not be blank") @Valid final String paymentId) {
+		log.info("*** PaymentDto, resource; save payment *");
+		return ResponseEntity.ok(this.paymentService.updateStatus(Integer.parseInt(paymentId)));
+	}
+
 	@DeleteMapping("/{paymentId}")
 	public ResponseEntity<Boolean> deleteById(@PathVariable("paymentId") final String paymentId) {
 		log.info("*** Boolean, resource; delete payment by id *");
